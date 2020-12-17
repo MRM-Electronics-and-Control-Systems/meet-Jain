@@ -1,0 +1,22 @@
+#include<Servo.h>
+Servo servol;
+int pos = 0;
+void setup()
+{
+ servol.attach(13); // because 1 have connected signal pin with 13
+}
+
+void loop()
+{
+  // rotate from 0 to 180 degree
+  for(pos=0;pos<=180;pos++)
+  {
+    servol.write(pos);
+    delay(15);
+  } 
+  for(pos=180;pos>=0;pos--)
+  {
+    servol.write(pos);
+    delay(15);
+  }
+}  
